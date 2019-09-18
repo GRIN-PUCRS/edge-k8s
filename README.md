@@ -44,14 +44,6 @@ kubectl apply -f files/ngnix-edeploy.yaml
 kubectl get edeploy -o wide
 ```
 
-## Deployment
-
-Image 1
-![Deployment vs EdgeDeployment](documentation/deployvsedeploy.jpg)
-
-Image 2
-![Edge Deployment Scenario](documentation/scenario.jpg)
-
 ## Contributing
 
 Please read [CONTRIBUTING.md]() for details on our code of conduct, and the process for submitting pull requests to us.
