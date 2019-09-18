@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-controller
+  namespace: kube-system
+  labels:
+    app: edge-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-controller
+  template:
+    metadata:
+      labels:
+        app: edge-controller
+    spec:
+      containers:
+      - name: edge-controller
+        image: luisdknob/edge-controller:v0.1
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

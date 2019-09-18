@@ -1,0 +1,26 @@
+apiVersion: grin.pucrs.br/v1alpha1
+kind: EdgeDeployment
+metadata:
+  name: nginx-edge-deploy
+  labels:
+    app: nginx
+spec:
+  regions:
+    - name: edge-1
+      selector:
+        region: edge-1
+      replicas: 3 
+    - name: edge-2
+      selector:
+        region: edge-2
+      replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.15-alpine
+        ports:
+        - containerPort: 80
